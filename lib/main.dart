@@ -6,14 +6,17 @@ import 'signup_screen.dart';
 import 'welcome_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget {
+
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -32,6 +35,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-}
-
 }

@@ -10,6 +10,8 @@ class SignupScreen extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  SignupScreen({Key? key}) : super(key: key);
+
   Widget signUpWith(IconData icon) {
     return Container(
       height: 50,
@@ -22,7 +24,7 @@ class SignupScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(icon, size: 24),
-          TextButton(onPressed: () {}, child: Text('Sign in')),
+          TextButton(onPressed: () {}, child: const Text('Sign in')),
         ],
       ),
     );
@@ -79,7 +81,7 @@ class SignupScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    SizedBox(height: 45),
+                    const SizedBox(height: 45),
                     userInput(emailController, 'Email', TextInputType.emailAddress),
                     userInput(passwordController, 'Password', TextInputType.visiblePassword),
                     Container(
@@ -113,21 +115,19 @@ class SignupScreen extends StatelessWidget {
                       ),
                     ),
                     const Divider(thickness: 0, color: Colors.white),
-                    /*
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //Text('Don\'t have an account yet ? ', style: TextStyle(color: Colors.grey, fontStyle: FontStyle.italic),),
                     TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'Sign Up',
                       style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                     ),
                   ),
                   ],
                 ),
-                  */
                   ],
                 ),
               ),

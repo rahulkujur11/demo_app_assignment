@@ -20,7 +20,7 @@ class SuccessfulScreen extends StatelessWidget {
             // Navigate to second route when tapped.
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SecondRoute()),
+              MaterialPageRoute(builder: (context) => const TakePictureScreen(camera: camera)),
             );
           },
         ),
@@ -28,33 +28,9 @@ class SuccessfulScreen extends StatelessWidget {
     );
   }
 }
-class SecondRoute extends StatelessWidget {
 
-  const SecondRoute({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Scanner'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Navigate back to first route when tapped.
-            Navigator.push(
-                context,
-              MaterialPageRoute(builder: (context) => const TakePictureScreen(camera: camera))
-            );
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
-    );
-  }
-}
-
-Future<void> camera() async {
+Future<dynamic> camera() async {
   // Ensure that plugin services are initialized so that `availableCameras()`
   // can be called before `runApp()`
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,7 +44,7 @@ Future<void> camera() async {
   runApp(
     MaterialApp(
       theme: ThemeData.dark(),
-      home: TakePictureScreen(git commit -mgit commit -m
+      home: TakePictureScreen(
         // Pass the appropriate camera to the TakePictureScreen widget.
         camera: firstCamera,
       ),
